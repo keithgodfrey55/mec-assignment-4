@@ -43,6 +43,10 @@ function checkMove(y) {
     }
 
 }
+function botMove{
+    let bot_move = Math.floor(Math.random()*(7+1));
+    checkMove(botMove);
+}
 
 function checkHorizontal() {
 
