@@ -8,6 +8,7 @@ let board = [
     [' ', ' ', ' ', ' ', ' ', ' '],
 ];
 let playerMove = true;
+
 function makeBoard(board) {
     for (let i = 0; i < 7; i++) {
         for (let x = 0; x < 6; x++) {
@@ -17,27 +18,33 @@ function makeBoard(board) {
 
     }
 }
-function checkMove(y){
+
+function checkMove(y) {
     console.log('inside function');
-    for(let x = 6; x >= 0; x--){
+    for (let x = 6; x >= 0; x--) {
         console.log('inside loop');
-        if(document.getElementById(`slot${x}-${y}`).style.backgroundColor == "white"){
+        if (document.getElementById(`slot${x}-${y}`).style.backgroundColor == "white") {
             console.log('inside if');
-            if(playerMove === true){
+            if (playerMove === true) {
                 document.getElementById(`slot${x}-${y}`).style.backgroundColor = "red";
                 console.log(x);
                 playerMove = false;
+                board[x][y] = "red"
                 break;
-            }
-            else{
+            } else {
                 document.getElementById(`slot${x}-${y}`).style.backgroundColor = "blue";
                 console.log(x);
                 playerMove = true;
-            break;
+                board[x][y] = "blue"
+                break;
             }
-        
+
         }
     }
+
+}
+
+function checkHorizontal() {
 
 }
 
