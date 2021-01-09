@@ -25,12 +25,12 @@ function checkHorizontal() {
     for (let i = 6; i > 0; i--) {
         for (let j = 0; j < 3; j++) {
             if ((board[i][j] == board[i][j + 1]) && (board[i][j] == board[i][j + 2]) && (board[i][j] == board[i][j + 3])) {
-                if (document.getElementById(`slot${i}-${j}`).style.backgroundColor = "red") {
+                if (document.getElementById(`slot${i}-${j}`).style.backgroundColor === "red") {
                     console.log("Player Wins")
                     wins += 1;
                     alert("Player Wins")
                     return true;
-                } else if (document.getElementById(`slot${i}-${j}`).style.backgroundColor = "blue") {
+                } else if (document.getElementById(`slot${i}-${j}`).style.backgroundColor === "blue") {
                     console.log("AI Wins")
                     losses += 1;
                     alert("AI Wins")
@@ -42,23 +42,26 @@ function checkHorizontal() {
 }
 
 function checkVertical() {
-    for (let j = 6; j > 0; j--) {
-        for (let i = 0; i < 3; i++) {
-            if ((board[i][j] == board[i][j + 1]) && (board[i][j] == board[i][j + 2]) && (board[i][j] == board[i][j + 3])) {
+    for (let i = 6; i > 0; i--) {
+        for (let j = 0; j < 3; j++) {
+            if ((board[i][j] == board[i-1][j]) && (board[i][j] == board[i-2][j]) && (board[i][j] == board[i-3][j])) {
                 if (document.getElementById(`slot${i}-${j}`).style.backgroundColor === "red") {
                     console.log("Player Wins")
                     wins += 1;
                     alert("Player Wins")
                     return true;
-                } else if (document.getElementById(`slot${i}-${j}`).style.backgroundColor === "blue") {
+                } 
+                else if (document.getElementById(`slot${i}-${j}`).style.backgroundColor === "blue") {
                     losses += 1;
                     alert("AI Wins")
                     return true;
                 }
-            }
+             }
         }
-    }
+     }
 }
+
+
 
 function checkDiagonalRight() {
     for (let i = 6; i > 0; i--) {
