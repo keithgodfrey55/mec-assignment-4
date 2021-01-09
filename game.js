@@ -16,27 +16,21 @@ function makeBoard(board) {
     for (let i = 0; i < 7; i++) {
         for (let x = 0; x < 6; x++) {
             document.getElementById(`slot${i}-${x}`).style.backgroundColor = "white";
-            console.log(document.getElementById(`slot${i}-${x}`));
         }
 
     }
 }
 
 function checkMove(y) {
-    console.log('inside function');
     for (let x = 6; x >= 0; x--) {
-        console.log('inside loop');
         if (document.getElementById(`slot${x}-${y}`).style.backgroundColor == "white") {
-            console.log('inside if');
             if (playerMove === true) {
                 document.getElementById(`slot${x}-${y}`).style.backgroundColor = "red";
-                console.log(x);
                 playerMove = false;
                 board[x][y] = "red"
                 break;
             } else {
                 document.getElementById(`slot${x}-${y}`).style.backgroundColor = "blue";
-                console.log(x);
                 playerMove = true;
                 board[x][y] = "blue"
                 break;
@@ -46,13 +40,10 @@ function checkMove(y) {
     }
 
 }
-<<<<<<< HEAD
 function botMove(){
     let bot_move = Math.floor(Math.random()*(7+1));
     checkMove(botMove);
 }
-=======
->>>>>>> JS updated
 
 function checkHorizontal() {
     for (let i = 6; i > 0; i--) {
