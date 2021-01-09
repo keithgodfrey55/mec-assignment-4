@@ -84,7 +84,7 @@ function reset(){
     makeBoard(board);
     playerMove = true;
 }
-gi
+
 makeBoard(board);
 /*if if its the player turn & they click on a column then 
 check the most bottom slot 
