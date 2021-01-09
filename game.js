@@ -119,6 +119,7 @@ function checkMove(y) {
     }
 
 }
+// makeBoard(board);
 
 function reset(){
     makeBoard(board);
@@ -130,8 +131,13 @@ function botMove(){
     checkMove(bot_move);
 }
 
-function move(select){
+function move(select) {
         checkMove(select);
+        // checkHorizontal();
+        // checkVertical();
+        // checkDiagonalRight();
+        // botMove();
+
 }
 
 makeBoard(board);
