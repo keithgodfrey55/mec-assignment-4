@@ -21,9 +21,6 @@ function makeBoard(board) {
     }
 }
 
-
-
-
 function checkHorizontal() {
     for (let i = 6; i > 0; i--) {
         for (let j = 0; j < 3; j++) {
@@ -119,26 +116,19 @@ function checkMove(y) {
     }
 
 }
+
 function reset(){
     makeBoard(board);
     playerMove = true;
 }
+
 function botMove(){
     let bot_move = Math.floor(Math.random()*(7+1));
     checkMove(bot_move);
 }
+
 function move(select){
-   
         checkMove(select);
-
-    
-    // botMove();
-    // checkVertical();
-    // checkHorizontal();
-    
-    // checkDiagonalRight();
-    
-
 }
 
 makeBoard(board);
