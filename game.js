@@ -48,13 +48,15 @@ function checkHorizontal() {
 function checkVertical() {
     for (let i = 6; i > 0; i--) {
         for (let j = 0; j < 3; j++) {
-            if ((board[i][j] == board[i - 1][j]) && (board[i][j] == board[i - 2][j]) && (board[i][j] == board[i - 3][j])) {
+            if ((board[i][j] == "red") && (board[i - 1][j] == "red") && (board[i - 2][j] == "red") && (board[i - 3][j] == "red")) {
                 if (document.getElementById(`slot${i}-${j}`).style.backgroundColor === "red") {
                     console.log("Player Wins")
                     wins += 1;
                     alert("Player Wins")
                     return true;
-                } else if (document.getElementById(`slot${i}-${j}`).style.backgroundColor === "blue") {
+                }
+            } else if ((board[i][j] == "blue") && (board[i - 1][j] == "blue") && (board[i - 2][j] == "blue") && (board[i - 3][j] == "blue")) {
+                if (document.getElementById(`slot${i}-${j}`).style.backgroundColor === "blue") {
                     losses += 1;
                     alert("AI Wins")
                     return true;
@@ -139,7 +141,7 @@ function move(select) {
     checkMove(select);
     botMove();
     checkHorizontal();
-    // checkVertical();
+    checkVertical();
     // checkDiagonalRight();
 
 
