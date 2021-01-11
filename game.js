@@ -33,6 +33,7 @@ function tie(){
         document.getElementById("tie").innerHTML = "Ties: " + ties;
         ties+=1;
         alert("Its a Tie!");
+        reset()
     }
 }
 function checkHorizontal() {
