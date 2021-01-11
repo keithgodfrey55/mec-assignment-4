@@ -23,6 +23,11 @@ function makeBoard(board) {
     }
 }
 
+function reset() {
+    makeBoard(board);
+    playerMove = true;
+}
+
 function tie(){
     if(whites==0){
         document.getElementById("tie").innerHTML = "Ties: " + ties;
@@ -38,6 +43,7 @@ function checkHorizontal() {
                     console.log("Player Wins")
                     wins += 1;
                     alert("Player Wins")
+                    reset()
                     document.getElementById("win").innerHTML = "Wins: " + wins;
                     // return true;
                     console.log('this was a horizontal win')
@@ -48,6 +54,7 @@ function checkHorizontal() {
                     console.log("AI Wins")
                     losses += 1;
                     alert("AI Wins")
+                    reset()
                     document.getElementById("lose").innerHTML = "Losses: " + losses;
                     // return true;
                     console.log('this was a horizontal win')
@@ -65,6 +72,7 @@ function checkVertical() {
                     console.log("Player Wins")
                     wins += 1;
                     alert("Player Wins")
+                    reset()
                     document.getElementById("win").innerHTML = "Wins: " + wins;
                     console.log('this was a vertical win')
                     // return true;
@@ -73,6 +81,7 @@ function checkVertical() {
                 // if (document.getElementById(`slot${i}-${j}`).style.backgroundColor === "blue") {
                     losses += 1;
                     alert("AI Wins")
+                    reset()
                     document.getElementById("lose").innerHTML = "Losses: " + losses;
                     console.log('this was a vertical win')
                     // return true;
@@ -91,6 +100,7 @@ function checkDiagonalRight() {
                 if (document.getElementById(`slot${i}-${j}`).style.backgroundColor === "red") {
                     wins += 1;
                     alert("Player Wins")
+                    reset()
                     document.getElementById("win").innerHTML = "Wins: " + wins;
                     // return true;
                     console.log('this was a diagonal right win')
@@ -99,6 +109,7 @@ function checkDiagonalRight() {
                 if (document.getElementById(`slot${i}-${j}`).style.backgroundColor === "blue") {
                     losses += 1;
                     alert("AI Wins")
+                    reset()
                     document.getElementById("lose").innerHTML = "Losses: " + losses;
                     // return true;
                     console.log('this was a diagonal right win')
@@ -115,6 +126,7 @@ function checkDiagonalLeft() {
                 if (document.getElementById(`slot${i}-${j}`).style.backgroundColor === "red") {
                     wins += 1;
                     alert("Player Wins")
+                    reset()
                     document.getElementById("win").innerHTML = "Wins: " + wins;
                     // return true;
                     console.log('this was a diagonal left win')
@@ -123,6 +135,7 @@ function checkDiagonalLeft() {
                     if (document.getElementById(`slot${i}-${j}`).style.backgroundColor === "blue") {
                         losses += 1;
                         alert("AI Wins")
+                        reset()
                         document.getElementById("lose").innerHTML = "Losses: " + losses;
                         console.log('this was a diagonal left win')
                         // return true;
@@ -156,10 +169,6 @@ function checkMove(y) {
 }
 // makeBoard(board);
 
-function reset() {
-    makeBoard(board);
-    playerMove = true;
-}
 
 function botMove() {
     let bot_move = Math.floor(Math.random() * 6);
