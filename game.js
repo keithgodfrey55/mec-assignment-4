@@ -189,8 +189,8 @@ function botMove() {
 
 function move(select) {
     checkMove(select);
-    tie();
     botMove();
+    tie();
     checkHorizontal();
     checkVertical();
     checkDiagonalRight();
